@@ -1,0 +1,18 @@
+@import '../../../styles/app.scss';
+
+.footer {
+  height: 192px;
+  background-color: $dark-grey;
+  font-family: $text-font-stack;
+  color: #707070;
+  @include flex-align;
+  flex-direction: column;
+  &__paragraph {
+    margin: 0px;
+    margin-bottom: 10px;
+    font-style: italic;
+    &:first-of-type {
+      margin-top: 10px;
+    }
+  }
+}

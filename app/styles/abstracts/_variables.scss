@@ -1,0 +1,46 @@
+// -----------------------------------------------------------------------------
+// This file contains all application-wide Sass variables.
+// -----------------------------------------------------------------------------
+
+/// Regular font family
+/// @type List
+$text-font-stack: 'Titillium Web', sans-serif !default;
+
+/// Code (monospace) font family
+/// @type List
+$code-font-stack: 'Titillium Web', monospace !default;
+
+/// Copy text color
+/// @type Color
+$text-color: #ccc !default;
+
+/// Main brand color
+/// @type Color
+$brand-color: #fc4842 !default;
+
+/// Light grey
+/// @type Color
+$light-grey: #ccc !default;
+
+/// Medium grey
+/// @type Color
+$mid-grey: #242424 !default;
+
+/// Dark grey
+/// @type Color
+$dark-grey: #151515 !default;
+
+$breakpoints: (
+  xs: 0,
+  sm: 576px,
+  md: 768px,
+  lg: 992px,
+  xl: 1200px,
+);
+
+$container-max-widths: (
+  sm: 540px,
+  md: 720px,
+  lg: 960px,
+  xl: 1140px,
+);

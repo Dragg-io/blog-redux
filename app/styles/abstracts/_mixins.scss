@@ -1,0 +1,73 @@
+// -----------------------------------------------------------------------------
+// This file contains all application-wide Sass mixins.
+// -----------------------------------------------------------------------------
+
+/// Event wrapper
+/// @author Harry Roberts
+/// @param {Bool} $self [false] - Whether or not to include current selector
+/// @link https://twitter.com/csswizardry/status/478938530342006784 Original tweet from Harry Roberts
+@mixin on-event($self: false) {
+  @if $self {
+    &,
+    &:hover,
+    &:active,
+    &:focus {
+      @content;
+    }
+  } @else {
+    &:hover,
+    &:active,
+    &:focus {
+      @content;
+    }
+  }
+}
+
+/// Make a context based selector a little more friendly
+/// @author Kitty Giraudel
+/// @param {String} $context
+@mixin when-inside($context) {
+  #{$context} & {
+    @content;
+  }
+}
+
+@mixin breakpoint($breakpoint) {
+  @if map-has-key($breakpoints, $breakpoint) {
+    @media (min-width: #{map-get($breakpoints, $breakpoint)}) {
+      @content;
+    }
+  } @else {
+    @warn 'Unfortunately, no value could be retrieved from `#{$breakpoint}`. '
+      + 'Please make sure it is defined in `$grid-breakpoints` map.';
+  }
+}
+
+@mixin content-width {
+  width: 100%;
+  max-width: map_get($container-max-widths, xs);
+  padding: 0 1rem;
+
+  @include breakpoint('sm') {
+    max-width: map_get($container-max-widths, sm);
+    padding: 0;
+  }
+
+  @include breakpoint('md') {
+    max-width: map_get($container-max-widths, md);
+  }
+
+  @include breakpoint('lg') {
+    max-width: map_get($container-max-widths, lg);
+  }
+
+  @include breakpoint('xl') {
+    max-width: map_get($container-max-widths, xl);
+  }
+}
+
+@mixin flex-align {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

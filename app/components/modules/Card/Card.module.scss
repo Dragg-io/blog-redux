@@ -1,0 +1,16 @@
+@import '../../../styles/app.scss';
+
+.card {
+  background-color: $dark-grey;
+  width: 95%;
+  height: 527px;
+  max-width: 448px;
+  padding: 35px;
+  margin: 20px;
+  &__description {
+    color: $light-grey;
+    font-family: $text-font-stack;
+    line-height: 37px;
+    font-size: 20px;
+  }
+}

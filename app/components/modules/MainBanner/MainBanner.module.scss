@@ -1,0 +1,28 @@
+@import '../../../styles/app.scss';
+
+.banner {
+  width: calc(100% - 140px);
+  margin: 70px auto;
+  height: 712px;
+  background-color: $dark-grey;
+  display: flex;
+  > div {
+    width: 50%;
+    height: 100%;
+  }
+  &__title {
+    @include flex-align;
+  }
+  &__image {
+    display: flex;
+    align-items: flex-end;
+    &_content {
+      width: 100%;
+      height: 115%;
+      background-position-x: left;
+      background-position-y: bottom;
+      background-size: cover;
+      background-repeat: no-repeat;
+    }
+  }
+}
