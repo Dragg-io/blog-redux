@@ -37,15 +37,19 @@ export default function HomePage() {
         }}
         className="mySwiper"
       >
-        <SwiperSlide>
-          {data?.map((item) =>
-            item.sticky ? <MainBanner key={item.id} data={item} /> : '',
-          )}
-        </SwiperSlide>
+        {data?.map((item) =>
+          item.sticky ? (
+            <SwiperSlide key={item.id}>
+              <MainBanner data={item} />
+            </SwiperSlide>
+          ) : (
+            <></>
+          ),
+        )}
       </Swiper>
       <section className={styles.container}>
         {data?.map((item) =>
-          !item.sticky ? <Card key={item.id} data={item} /> : '',
+          item.sticky ? <Card key={item.id} data={item} /> : '',
         )}
       </section>
     </main>
